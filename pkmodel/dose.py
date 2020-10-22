@@ -17,11 +17,13 @@ def dose_steady(t,X,times):
         
     # run through start times until t is larger than start time
 
-    for time in times:
-        if t>=time[0] and t<= time[1]:
+    print(len(times))
+    for i in range(len(times)):
+        print(i)
+        if t>=times[i][0] and t<= times[i][1]:
             return X
-        else:
-            return 0
+        
+    return 0
 
 
 
