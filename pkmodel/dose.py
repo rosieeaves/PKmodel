@@ -1,9 +1,5 @@
 import numpy as np
 
-def dose_constant(t,X): 
-    return X
-
-
 def dose_steady(t,X,times):
     """Administers a steady dose between two times.
     
@@ -26,30 +22,6 @@ def dose_steady(t,X,times):
             return X
         else:
             return 0
-
-    # if t is also smaller than the corresponding end time return the dosage
-
-    if times[i-1][1] >= t:   
-        return X
-
-
-def dose_instant(t,X,times):
-    """Administers an instantaneous dose at multiple times.
-    
-    :param t:       model time
-    :param X:       dosage in ng
-    :param times:   tuple of times at which to adminster dose of X ng
-    :retuns:        dosage in ng
-    """
-
-    if not isinstance(times, tuple):
-        raise TypeError('times should be a tuple of times at which dose should be administered.')
-
-    # return dosage if model time matches any dosage time
-
-    if t in times:
-        return X
-
 
 
 
